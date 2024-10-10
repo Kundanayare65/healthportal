@@ -1,0 +1,10 @@
+/* Appointment.css */
+
+input:focus {
+    outline: none;
+  }
+  
+  button {
+    transition: background-color 0.3s ease;
+  }
+  

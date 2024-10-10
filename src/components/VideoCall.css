@@ -1,0 +1,105 @@
+/* src/components/VideoCall.css */
+
+.video-call-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically for mobile */
+    align-items: center; /* Center items horizontally */
+    padding: 30px; /* Increased padding for a spacious feel */
+    background: linear-gradient(to bottom right, #eaf3f8, #d1e6ef); /* Soft gradient background */
+    border-radius: 20px; /* More rounded corners for a modern touch */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow for added depth */
+    max-width: 900px; /* Set a max width for larger screens */
+    margin: 20px auto; /* Center the container with margin */
+    transition: transform 0.3s; /* Smooth transform on hover */
+}
+
+.video-call-container:hover {
+    transform: scale(1.02); /* Slight scale effect on hover */
+}
+
+.video-container {
+    display: flex;
+    justify-content: space-between; /* Space between video elements */
+    width: 100%; /* Ensure full width for video container */
+    margin-top: 20px; /* Space between buttons and video */
+}
+
+.video {
+    flex: 1; /* Equal growth and shrink */
+    margin: 0 15px; /* Margin for spacing between video elements */
+    border-radius: 15px; /* Rounded corners for video elements */
+    border: 3px solid rgba(41, 128, 185, 0.8); /* More pronounced border */
+    background-color: #000; /* Background color for video element */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Position for absolute children */
+}
+
+.video::after {
+    content: ""; /* Overlay effect for modern design */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* Darker overlay */
+    transition: opacity 0.3s; /* Smooth transition for overlay */
+}
+
+.video:hover::after {
+    opacity: 0; /* Hide overlay on hover */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center buttons in container */
+    margin-bottom: 20px; /* Space between buttons and video */
+}
+
+button {
+    padding: 14px 28px; /* Increased padding for buttons */
+    margin: 0 10px; /* Space between buttons */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #2980b9; /* Button background color */
+    color: white; /* Button text color */
+    cursor: pointer; /* Pointer cursor for buttons */
+    font-size: 18px; /* Larger font size */
+    font-weight: 600; /* Semi-bold text for emphasis */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for buttons */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+button:hover {
+    background-color: #1a5276; /* Darker shade on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(41, 128, 185, 1); /* Add focus shadow */
+}
+
+button.disabled {
+    background-color: #bdc3c7; /* Gray color for disabled button */
+    cursor: not-allowed; /* Change cursor for disabled state */
+}
+
+@media (min-width: 600px) {
+    .video-call-container {
+        flex-direction: row; /* Row layout on larger screens */
+    }
+
+    .video {
+        margin: 0 20px; /* Increased margin for larger screens */
+    }
+}
+
+@media (min-width: 900px) {
+    .video-call-container {
+        padding: 40px; /* Increase padding on larger screens */
+    }
+
+    button {
+        font-size: 20px; /* Larger font size for buttons */
+    }
+}
